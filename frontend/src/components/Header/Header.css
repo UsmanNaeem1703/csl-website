@@ -1,0 +1,127 @@
+/* Header Logo */
+.header-logo {
+    width: 200px;
+    /* Increased logo size */
+}
+
+.navbar-light {
+    background-color: var(--dark-bg);
+    /* Deep purple navbar background */
+}
+
+/* Main Header Styles */
+.main-header {
+    background-color: #eee;
+    /* Deep purple background similar to the image */
+    padding: 20px;
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 36px;
+    /* Larger font size */
+    color: #fff;
+    /* White text for contrast */
+    cursor: pointer;
+}
+
+.main-header small {
+    font-size: 14px;
+    color: #d3d3d3;
+    /* Light gray for contrast */
+    display: block;
+}
+
+/* Navbar Styles */
+.navbar-light .navbar-nav .nav-link {
+    color: #ffffff;
+    /* White text color */
+    margin-right: 30px;
+    /* More space between links */
+    font-size: 18px;
+    /* Larger text */
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #c0c0c0;
+    /* Bright yellow on hover for prominence */
+}
+
+
+
+/* Utilities */
+.menu-right {
+    justify-content: flex-end;
+}
+
+.menu-right .btn {
+    background-color: var(--dark-bg);
+    /* Bright yellow buttons */
+    border: none;
+    cursor: pointer;
+    padding: 0 10px;
+    border-radius: 4px;
+    margin-right: 20px;
+    font-size: 16px;
+    /* Larger button text */
+}
+
+.menu-right .btn:hover {
+    background-color: var(--hover-color);
+    /* Slightly darker yellow on hover */
+    border: none;
+}
+
+/* Search Box */
+.customInput {
+    padding: 0 5px;
+    /* Increased padding */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease-in-out;
+    font-size: 16px;
+    /* Larger input text */
+}
+
+.hamburger {
+    cursor: pointer;
+}
+
+.hamburger input {
+    display: none;
+}
+
+.hamburger svg {
+    /* The size of the SVG defines the overall size */
+    height: 2em;
+    /* Define the transition for transforming the SVG */
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+    fill: none;
+    stroke: white;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+    /* Define the transition for transforming the Stroke */
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+        stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+    stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked+svg {
+    transform: rotate(-45deg);
+}
+
+.hamburger input:checked+svg .line-top-bottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+}
+
+.lower-header {
+    padding: 0;
+}

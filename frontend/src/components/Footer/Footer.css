@@ -1,0 +1,33 @@
+.footer-container {
+    background-color: var(--dark-bg);
+    padding: 20px;
+    border-top: 1px solid;
+    color: #ebebeb;
+}
+
+.footer-container h5 {
+    margin-top: 0;
+    color: white;
+}
+
+.footer-container p {
+    margin-bottom: 10px;
+    color: #bbb
+}
+
+.footer-container .flex-center p {
+    color: white;
+}
+
+.footer-container .nav {
+    flex-direction: column;
+}
+
+.footer-container .nav-link {
+    padding: 5px 0;
+    color: #bbb
+}
+
+.footer-container .nav-link:hover {
+    color: white;
+}

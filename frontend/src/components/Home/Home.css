@@ -1,0 +1,50 @@
+.flex-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-main img {
+    width: 100%;
+}
+
+.view-image {
+    padding: 1rem;
+}
+
+.view-image img {
+    max-width: 80%;
+    padding: 0.5rem;
+    border: 5px solid var(--dark-bg);
+}
+
+.president-view,
+.vice-president-view {
+    background-color: #f8f9fa;
+    /* Light background for text area */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Soft shadow for depth */
+}
+
+.view-image h3 {
+    font-weight: bold;
+    color: #3f2168;
+    /* Consistent branding color */
+    margin-top: 15px;
+}
+
+.president-view p,
+.vice-president-view p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #333;
+}
+
+.quotation-primary {
+    color: var(--dark-bg);
+    font-size: 50px;
+    line-height: 0px;
+    vertical-align: bottom;
+}
