@@ -1,9 +1,6 @@
-.home-carousel {
-    height: 70vh;
-}
+.home-carousel {}
 
 .home-carousel img {
-    height: 70vh;
     width: 100%;
 }
 
