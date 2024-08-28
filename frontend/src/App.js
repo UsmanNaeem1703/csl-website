@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Mentors from "./components/Mentors/Mentors";
 import Leadership from "./components/Leadership/Leadership";
 import Exectives from "./components/Exectives/Exectives";
+import AboutUs from "./components/About Us/AboutUs";
 
 const AppContent = () => {
   const [loading, setLoading] = useState(false);
@@ -59,6 +60,7 @@ const AppContent = () => {
           <Route path="/mentors" element={<Mentors />} />
           <Route path="/leadership" element={<Leadership />} />
           <Route path="/exectives" element={<Exectives />} />
+          <Route path="/about" element={<AboutUs />} />
           <Route path="*" element={<ComingSoon />} />
         </Routes>
         <Footer />

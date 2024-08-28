@@ -43,7 +43,15 @@ function Home(props) {
             <img src={carouselImage8} alt="Getting Audience attention" />
           </Carousel.Item>
         </Carousel>
-
+        <Row className="mb-5 align-items-center">
+          <Col md={12} className="order-md-2">
+            <div className="vice-president-view p-4">
+              <h3 className="quotation-primary mt-4">“</h3>
+              <p className="text-justify">CyberSpace Legion is a Campus-level Society at FAST National University of Computer and Emerging Sciences, Islamabad that aims at creating a playground where students can develop and enhance their skills relating to Cyber Security, irrespective of their department or field, in a learning and friendly environment.</p>
+              <h3 className="text-right quotation-primary">”</h3>
+            </div>
+          </Col>
+        </Row>
 
       </Container>
     </div >

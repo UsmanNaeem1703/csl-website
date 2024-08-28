@@ -1,3 +1,12 @@
+.home-carousel {
+    height: 70vh;
+}
+
+.home-carousel img {
+    height: 70vh;
+    width: 100%;
+}
+
 .flex-center {
     display: flex;
     flex-direction: column;
@@ -5,9 +14,7 @@
     align-items: center;
 }
 
-.home-main img {
-    width: 100%;
-}
+
 
 .view-image {
     padding: 1rem;
