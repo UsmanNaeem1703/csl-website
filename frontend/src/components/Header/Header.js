@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import "./Header.css";
 import logo from "./images/csl-logo.png"
-import { Container, Navbar, Nav, Button, Form } from "react-bootstrap";
+import { Container, Navbar, Nav, Button, Form, NavDropdown } from "react-bootstrap";
 
 const Header = (props) => {
-  const [expanded, setExpanded] = useState(props.expanded);
-
   return (
     <div>
       {/* Main Header Navbar */}
@@ -52,7 +50,13 @@ const Header = (props) => {
             <Nav className="mx-auto">
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/newsletter">Newsletter</Nav.Link>
+              <NavDropdown title="Our Team" id="basic-nav-dropdown">
+                <NavDropdown.Item href="/mentors">Mentors</NavDropdown.Item>
+                <NavDropdown.Item href="/leadership">Leaders</NavDropdown.Item>
+                <NavDropdown.Item href="/exectives">Exectives</NavDropdown.Item>
+              </NavDropdown>
               <Nav.Link href="/playbooks">Playbooks</Nav.Link>
+
               <Nav.Link href="/about">About Us</Nav.Link>
               <Nav.Link href="/contact">Contact Us</Nav.Link>
             </Nav>

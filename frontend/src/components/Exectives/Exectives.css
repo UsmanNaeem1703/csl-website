@@ -1,0 +1,10 @@
+.exectives-main .view-image {
+    width: 200px;
+    height: 200px;
+}
+
+.exectives-main .view-image img {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    padding: 0.25rem;
+}
