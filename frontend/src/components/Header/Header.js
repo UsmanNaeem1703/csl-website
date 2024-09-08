@@ -15,14 +15,7 @@ const Header = (props) => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav" className="menu-right">
             <Nav className="ml-auto align-items-center">
-              <Form inline className="d-flex">
-                <Form.Control
-                  type="text"
-                  placeholder="Search"
-                  className="mr-sm-2 customInput"
-                />
-                <Button type="submit" className="header-button ml-2">Submit</Button>
-              </Form>
+              <Button className="header-button ml-2">Join CSL</Button>
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -56,7 +49,6 @@ const Header = (props) => {
                 <NavDropdown.Item href="/exectives">Exectives</NavDropdown.Item>
               </NavDropdown>
               <Nav.Link href="/playbooks">Playbooks</Nav.Link>
-
               <Nav.Link href="/about">About Us</Nav.Link>
               <Nav.Link href="/contact">Contact Us</Nav.Link>
             </Nav>
