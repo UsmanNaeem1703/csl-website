@@ -1,0 +1,86 @@
+/* General Styles */
+.mentors-section {
+    background: linear-gradient(to bottom right, #6a0572, #310a3d);
+    padding: 50px 0;
+}
+
+/* Mentor Box Styling */
+.mentor-box {
+    background: #ffffff;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.mentor-box:hover {
+    transform: scale(1.03);
+}
+
+/* Mentor Image Styling */
+.mentor-image-box {
+    flex: 1; /* Occupies 30-40% of the space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mentor-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Mentor Message Styling */
+.mentor-message-box {
+    flex: 2; /* Occupies 60-70% of the space */
+    padding-left: 30px;
+    color: #333;
+}
+
+.mentor-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.mentor-message {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.mentor-quote {
+    font-size: 2.5rem;
+    color: #6a0572;
+    margin-bottom: -20px;
+}
+
+.mentor-quote-right {
+    font-size: 2.5rem;
+    color: #6a0572;
+    text-align: right;
+    margin-top: -20px;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .mentor-box {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .mentor-message-box {
+        padding-left: 0;
+        padding-top: 20px;
+    }
+
+    .mentor-image {
+        width: 150px;
+        height: 150px;
+    }
+}

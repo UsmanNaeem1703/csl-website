@@ -1,0 +1,109 @@
+/* Events Page Styling */
+.events-page {
+    background: linear-gradient(to bottom right, #37001f, #5c1291); /* Background gradient */
+    padding-bottom: 50px;
+}
+
+.events-page h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 30px;
+    padding: 10px;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+.events-page p {
+    font-size: 1.2rem;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    padding:10px;
+    text-align: center;
+}
+
+.events-page .accordion p {
+    color: #333;
+}
+
+/* Accordion Item Styling */
+.accordion-item {
+    border: none;
+    margin-bottom: 10px;
+    
+}
+
+/* Event Content Layout */
+.event-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.countdown {
+    text-align: center;
+
+    font-size: 1.2rem;
+    color: #000000;
+    background-color: #ffffff;
+    border: 1px solid #610966;
+    border-radius:8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
+    padding: 10px;
+    margin-bottom: 5px;
+    width:55%;
+    align-self: left;
+}
+
+.event-details {
+    display: flex;
+   justify-content: space-between; 
+    align-items: flex-start;
+    gap:20px;
+    
+    
+}
+
+/* Venue & Description */
+.venue-description {
+    
+    flex: 1.2;
+    padding: 10px;
+    background-color: #ffffff;
+    border: 1px solid #610966;
+    border-radius:8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);   
+    width:54.5%;
+}
+
+/* Event Image */
+.event-image {
+    flex: 1;
+    padding: 0px;
+    text-align: center;
+}
+
+.event-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Accordion Header Styling */
+.accordion-header {
+    font-weight: bold;
+    background-color: #000000;
+    color: white;
+    padding: 10px;
+}
+
+.accordion-body {
+    padding: 8px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.accordion-header:hover {
+    background-color: #600540;
+}
+

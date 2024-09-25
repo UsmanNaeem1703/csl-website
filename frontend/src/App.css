@@ -1,7 +1,10 @@
 .App {
   text-align: left;
-  background-color: #e2efff;
+  min-height: 100vh; /* Ensures the gradient covers the full viewport height */
+  color: #333; /* White text for better contrast on the darker background */
 }
+
+
 
 :root {
   --bs-body-font-family: "Montserrat", sans-serif;
@@ -19,7 +22,7 @@
 .h4,
 .h5,
 .h6,
-h1,
+h1, 
 h2,
 h3,
 h4,
@@ -261,9 +264,7 @@ h1 {
 
 }
 
-.container {
-  max-width: 960px;
-}
+
 
 @media (min-width: 1400px) {
 
@@ -273,8 +274,8 @@ h1 {
   .container-sm,
   .container-xl,
   .container-xxl {
+    padding:10px;
     margin: 0 auto;
-    max-width: 960px
   }
 }
 
@@ -400,3 +401,4 @@ h1 {
 .text-left {
   text-align: left;
 }
+

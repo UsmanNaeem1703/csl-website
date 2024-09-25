@@ -3,13 +3,14 @@ import "./App.css";
 import Home from './components/Home/Home';
 import ComingSoon from "./components/ComingSoon/ComingSoon";
 import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
+import Footer from "./components/Footer/Footer";  
 import React, { Component, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Mentors from "./components/Mentors/Mentors";
 import Leadership from "./components/Leadership/Leadership";
 import Exectives from "./components/Exectives/Exectives";
 import AboutUs from "./components/About Us/AboutUs";
+import Events from "./components/Events/Events";
 
 const AppContent = () => {
   const [loading, setLoading] = useState(false);
@@ -58,6 +59,7 @@ const AppContent = () => {
         <Routes>
           <Route path="/" element={<Home handleBuyClick={handleBuyClick} />} />
           <Route path="/mentors" element={<Mentors />} />
+          <Route path="/events" element={<Events />} />
           <Route path="/leadership" element={<Leadership />} />
           <Route path="/exectives" element={<Exectives />} />
           <Route path="/about" element={<AboutUs />} />

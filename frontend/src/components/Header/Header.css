@@ -1,17 +1,18 @@
 /* Header Logo */
 .header-logo {
-    width: 200px;
+    width: 90px;
     /* Increased logo size */
+    
 }
 
 .navbar-light {
-    background-color: var(--dark-bg);
+    background-color: #ffffff;
     /* Deep purple navbar background */
 }
 
 /* Main Header Styles */
 .main-header {
-    background-color: #e2efff;
+    background-color: #ffffff;
     /* Deep purple background similar to the image */
     padding: 20px;
 }
@@ -20,22 +21,22 @@
     margin: 0;
     font-size: 36px;
     /* Larger font size */
-    color: #fff;
+    color: #0c0c0c;
     /* White text for contrast */
     cursor: pointer;
 }
 
 .main-header small {
     font-size: 14px;
-    color: #d3d3d3;
+    color: #040404;
     /* Light gray for contrast */
     display: block;
-}
+}   
 
 /* Navbar Styles */
 .navbar-light .navbar-nav .nav-link,
 .navbar-light .navbar-nav div {
-    color: #ffffff;
+    color: #000000;
     /* White text color */
     margin-right: 30px;
     /* More space between links */
@@ -60,7 +61,7 @@
 }
 
 .menu-right .btn {
-    background-color: var(--dark-bg);
+    background-color: #ffffff;
     /* Bright yellow buttons */
     border: none;
     cursor: pointer;
@@ -72,7 +73,7 @@
 }
 
 .menu-right .btn:hover {
-    background-color: var(--hover-color);
+    background-color: var(--hover-color 6);
     /* Slightly darker yellow on hover */
     border: none;
 }
@@ -105,7 +106,7 @@
 
 .line {
     fill: none;
-    stroke: white;
+    stroke: black;
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-width: 3;

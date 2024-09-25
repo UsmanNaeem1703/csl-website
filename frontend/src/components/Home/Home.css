@@ -1,54 +1,231 @@
-.home-carousel {}
-
-.home-carousel img {
-    width: 100%;
+.home-main {
+  text-align: left;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom right,
+      rgba(65, 40, 180, 1),
+      /* Darker purple/blue from the logo */
+      rgb(71, 8, 8)
+      /* Darker red from the logo */
+    );
 }
 
-.flex-center {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(to bottom right, #c474ac, #fefefe);
+  /* Yellow gradient */
+  padding: 100px 0;
+  position: relative;
+  clip-path: ellipse(100% 70% at 50% 30%);
+  /* Wave effect */
+}
+
+.hero-content {
+  color: #333;
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+.cta-button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 30px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #333;
+}
+
+/* Features Section */
+.features-section {
+  padding: 50px 0;
+}
+
+.feature {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-height: 250px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.feature h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.feature p {
+  color: #666;
+  font-size: 1.5rem;
+}
+
+.newsletter-modal .modal-content {
+  transition: transform 0.3s ease-out;
+}
+
+.home-main.blur {
+  filter: blur(5px);
+}
+
+/* Modal Styling */
+/* General Font and Background Styles */
+.home-main .modal-content{
+  font-family: Arial, sans-serif;
+  color: #333;
+  background: linear-gradient(to bottom right, rgba(65, 40, 180, 1), rgb(71, 8, 8));
+}
+
+/* Button Styles */
+.button, .cta-button, .subscribe-button {
+  background-color:  #000000; /* Purple shade for primary buttons */
+  color: #ffffff;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: bac  0.3s ease, transform 0.2s ease;
+}
+
+.button:hover, .cta-button:hover, .subscribe-button:hover {
+  background-color: #1a181b; /* Lighter purple on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Input Field Styles */
+input[type="email"], .form-control {
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #5A189A; /* Border color matching the buttons */
+  margin-bottom: 20px;
+}
+
+input[type="email"]:focus, .form-control:focus {
+  border-color: #7B2CBF; /* Lighter purple on focus */
+  box-shadow: 0 0 8px rgba(122, 45, 200, 0.5); /* Subtle glow effect */
+}
+
+/* Modal Specific Styles */
+.newsletter-modal .modal-content {
+  background: white; /* Clear background for focus */
+  border-radius: 15px; /* Rounded corners for modal */
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Soft shadow for modal */
+}
+
+.newsletter-modal .modal-header, .newsletter-modal .modal-body {
+  border-bottom: none; /* Cleaner modal design */
+}
+
+.newsletter-modal .modal-header .close {
+  color: #333;
+  opacity: 1; /* Ensure the close button is clearly visible */
+}
+
+/* Utility Classes for Text */
+.text-center {
+  text-align: center; /* Centering text where needed */
+}
+
+.mb-3, .mb-20 {
+  margin-bottom: 20px; /* Margin bottom utility for spacing */
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  .button, .cta-button, .subscribe-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .hero-section, .newsletter-content {
+    padding: 50px 10px; /* Adjust padding for smaller screens */
+  }
 }
 
 
-
-.view-image {
-    padding: 1rem;
+/* From Uiverse.io by kamehame-ha */ 
+.features-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 15px;
 }
 
-.view-image img {
-    max-width: 80%;
-    padding: 0.5rem;
-    border: 5px solid var(--dark-bg);
+.features-cards .feature-card {
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  height: 250px;
+  width: 400px;
+  border-radius: 15px;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  transition: 400ms;
 }
 
-.president-view,
-.vice-president-view {
-    background-color: #f8f9fa;
-    /* Light background for text area */
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    /* Soft shadow for depth */
+.features-cards .feature-card p.tip {
+  font-size: 2rem;
+  font-weight: 700;
 }
 
-.view-image h3 {
-    font-weight: bold;
-    color: #3f2168;
-    /* Consistent branding color */
-    margin-top: 15px;
+.features-cards .feature-card p.second-text {
+  font-size: 1rem;
 }
 
-.president-view p,
-.vice-president-view p {
-    font-size: 1.1em;
-    line-height: 1.6;
-    color: #333;
+.features-cards .feature-card:hover {
+  transform: scale(1.1, 1.1);
 }
 
-.quotation-primary {
-    color: var(--dark-bg);
-    font-size: 50px;
-    line-height: 0px;
-    vertical-align: bottom;
+.features-cards .feature-card:not(:hover) {
+  transform: scale(0.9, 0.9);
+}
+
+.latest-event-section {
+  padding: 50px 0;
+  background: #ffffff;
+
+  width: 100%;  /* Ensure it covers the full width */
+  margin: 0;  /* Remove any default margin */
+  font-family: Arial ;  /* Replace with the actual font family used above */
+}
+
+.latest-event-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-family: Arial;  /* Match the font family */
+  font-weight: 700;
+}
+
+.latest-event-section p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+ /* font-family:  Arial;  /* Match the font family */
+}
+
+.latest-event-section .cta-button {
+  /*font-family: sans-serif;  /* Match the font family */
 }
