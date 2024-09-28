@@ -1,145 +1,170 @@
-import React from 'react';
-import { Container, Accordion } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Container, Card, Button, Modal, Form } from 'react-bootstrap';
 import './Events.css';
 
 const eventsData = [
- 
     {
         id: 1,
         title: "Annual Cybersecurity Conference",
-        date: "October 15th, 2024",
+        time: "2024-10-01T09:00:00+05:00",  // Example time: October 1, 2024, at 9:00 AM PKT
         location: "Islamabad, Pakistan",
-        description: "Join us for a day of networking and learning about the latest trends and threats in cybersecurity.",
-        displayImage: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fgraphicdesigneye.com%2Fnewsletter-design-service%2F&psig=AOvVaw1h4QPAw1i4QOjyM5tVsYWd&ust=1727351436213000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNCEg9mD3ogDFQAAAAAdAAAAABAE",
+        description: "Lorem ipsum dolor sit amet. Aut aliquam nulla aut cupiditate facere aut enim temporibus qui pariatur dolorum est neque esse qui consequatur iste. Eum repellendus officia ut impedit architecto ut labore aspernatur qui incidunt magnam qui velit aliquam? Hic consectetur earum sit fuga quasi non ullam veniam sed eaque dolores eos exercitationem ipsum eos nulla ratione aut dolorum quia. Id illum enim id itaque nihil non quas animi.",
+        displayImage: "https://via.placeholder.com/300x200",  // Replace with actual images
         status: "Active"
     },
     {
         id: 2,
         title: "SIEM Workshop",
-        date: "November 5th, 2024",
+        time: "2024-11-15T14:00:00+05:00",  // Example time: November 15, 2024, at 2:00 PM PKT
         location: "Karachi, Pakistan",
-        description: "A hands-on workshop focused on the latest SIEM tools and technologies.",
-        displayImage: "https://api.cyberspacelegion.com/img/event-654321.jpg",
+        description: "Lorem ipsum dolor sit amet. Aut aliquam nulla aut cupiditate facere aut enim temporibus qui pariatur dolorum est neque esse qui consequatur iste. Eum repellendus officia ut impedit architecto ut labore aspernatur qui incidunt magnam qui velit aliquam? Hic consectetur earum sit fuga quasi non ullam veniam sed eaque dolores eos exercitationem ipsum eos nulla ratione aut dolorum quia. Id illum enim id itaque nihil non quas animi.",
+        displayImage: "https://via.placeholder.com/300x200",  // Replace with actual images
         status: "Pending"
     },
-    {
-        id: 3,
-        title: "Cybersecurity Webinar",
-        date: "December 10th, 2024",
-        location: "Online",
-        description: "An interactive online webinar discussing the latest cybersecurity strategies.",
-        displayImage: "https://api.cyberspacelegion.com/img/event-789012.jpg",
-        status: "Active"
-    },
-    {
-        id: 4,
-        title: "Threat Hunting Seminar",
-        date: "January 20th, 2025",
-        location: "Lahore, Pakistan",
-        description: "Learn advanced threat hunting techniques from industry experts.",
-        displayImage: "https://api.cyberspacelegion.com/img/event-345678.jpg",
-        status: "Active"
-    },
-    {
-        id: 5,
-        title: "AI in Cybersecurity Conference",
-        date: "February 15th, 2025",
-        location: "Islamabad, Pakistan",
-        description: "Explore how AI is transforming cybersecurity and what it means for the future.",
-        displayImage: "https://api.cyberspacelegion.com/img/event-901234.jpg",
-        status: "Pending"
-    },
-    {
-        id: 6,
-        title: "Digital Forensics Workshop",
-        date: "March 10th, 2025",
-        location: "Peshawar, Pakistan",
-        description: "A workshop dedicated to the latest in digital forensics techniques.",
-        displayImage: "https://api.cyberspacelegion.com/img/event-567890.jpg",
-        status: "Active"
-    },
-    {
-        id: 7,
-        title: "Blockchain Security Summit",
-        date: "April 25th, 2025",
-        location: "Islamabad, Pakistan",
-        description: "Discuss the implications of blockchain technology in cybersecurity.",
-        displayImage: "https://api.cyberspacelegion.com/img/event-112233.jpg",
-        status: "Pending"
-    },
-    {
-        id: 8,
-        title: "Penetration Testing Bootcamp",
-        date: "May 8th, 2025",
-        location: "Karachi, Pakistan",
-        description: "A bootcamp focused on penetration testing methodologies and tools.",
-        displayImage: "https://api.cyberspacelegion.com/img/event-445566.jpg",
-        status: "Active"
-    },
-    {
-        id: 9,
-        title: "Incident Response Planning Workshop",
-        date: "June 12th, 2025",
-        location: "Lahore, Pakistan",
-        description: "Hands-on workshop on building effective incident response plans.",
-        displayImage: "https://api.cyberspacelegion.com/img/event-778899.jpg",
-        status: "Pending"
-    },
-    {
-        id: 10,
-        title: "Data Privacy Day",
-        date: "July 20th, 2025",
-        location: "Peshawar, Pakistan",
-        description: "A seminar focusing on the importance of data privacy in today's digital world.",
-        displayImage: "https://api.cyberspacelegion.com/img/event-223344.jpg",
-        status: "Active"
-    },
-    {
-        id: 11,
-        title: "Cloud Security Conference",
-        date: "August 15th, 2025",
-        location: "Islamabad, Pakistan",
-        description: "Explore the latest trends and challenges in securing cloud environments.",
-        displayImage: "https://api.cyberspacelegion.com/img/event-556677.jpg",
-        status: "Pending"
-    }
+    // Add more events here...
 ];
 
+
 function Events() {
+    const [showModal, setShowModal] = useState(false);
+    const [selectedEvent, setSelectedEvent] = useState(null);
+    const [showRegisterModal, setShowRegisterModal] = useState(false); // Register modal state
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: ''
+    });
+
+    const handleClose = () => setShowModal(false);
+    const handleShow = (event) => {
+        setSelectedEvent(event);
+        setShowModal(true);
+    };
+
+    const handleRegisterClose = () => setShowRegisterModal(false);
+    const handleRegisterShow = () => setShowRegisterModal(true);
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
+
+    const handleFormSubmit = (e) => {
+        e.preventDefault();
+        // Handle form submission logic here (e.g., send data to server)
+        console.log("Form Submitted:", formData);
+        setFormData({
+            name: '',
+            email: '',
+            phone: ''
+        });
+        handleRegisterClose();
+    };
+
     return (
         <div className="events-page">
             <Container>
-                <h1 className='mt-4'>Upcoming Events</h1>
-                <p>Stay updated with the latest events and workshops.</p>
+                <h1 className="heading">Upcoming Events</h1>
+                <p className="para-color">Stay updated with the latest events and workshops.</p>
 
-                <Accordion defaultActiveKey="none">
-                    {eventsData.map((event, index) => (
-                        <Accordion.Item eventKey={index.toString()} key={event.id}>
-                            <Accordion.Header>{event.title}</Accordion.Header>
-                            <Accordion.Body>
-                                <div className="event-content">
-                                    {/* Countdown */}
-                                    <div className="countdown">
-                                        <h3>Countdown to Event</h3>
-                                        <p>{event.date}</p>
-                                    </div>
-
-                                    {/* Event Details */}
+                <div className="events-grid">
+                    {eventsData.map((event) => (
+                        <div className="event-card-wrapper" key={event.id}>
+                            <Card className="event-card">
+                                <Card.Img variant="left" src={event.displayImage} alt={event.title} />
+                                <Card.Body className='event-card-body'>
                                     <div className="event-details">
-                                        <div className="venue-description">
-                                            <h4>Venue: {event.location}</h4>
-                                            <p>{event.description}</p>
-                                        </div>
-                                        <div className="event-image">
-                                            <img src={event.displayImage} alt={event.title} />
+                                        <Card.Title><b>{event.title}</b></Card.Title>
+                                        <Card.Text className="mb-0">
+                                            <p className="d-inline-block mb-0">{new Date(event.time).toLocaleDateString('en-US', {
+                                                year: 'numeric',
+                                                month: 'long',
+                                                day: '2-digit'
+                                            })}</p>
+
+                                            <p className="d-inline-block mb-0" style={{ float: "right" }}>PKT {new Date(event.time).toLocaleTimeString('en-US', {
+                                                hour: '2-digit',
+                                                minute: '2-digit',
+                                                hour12: true,
+                                                timeZone: 'Asia/Karachi'
+                                            })}</p><br />
+                                            <hr class="mt-1 mb-3" />
+                                            <p className="text-justify">
+                                                <strong>Venue:</strong> {event.location}<br />
+                                                <p>{event.description.slice(0, 150)}...</p>
+                                            </p>
+                                        </Card.Text>
+                                        <div className="event-buttons">
+                                            <Button variant="primary" className="events-btn" onClick={handleRegisterShow}>Register</Button>
+                                            <Button variant="secondary" className="events-btn" onClick={() => handleShow(event)}>Learn More</Button>
                                         </div>
                                     </div>
-                                </div>
-                            </Accordion.Body>
-                        </Accordion.Item>
+                                </Card.Body>
+                            </Card>
+                        </div>
                     ))}
-                </Accordion>
+                </div>
             </Container>
+
+            {/* Learn More Modal */}
+            {selectedEvent && (
+                <Modal show={showModal} onHide={handleClose}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>{selectedEvent.title}</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <p><strong>Date:</strong> {selectedEvent.date}</p>
+                        <p><strong>Location:</strong> {selectedEvent.location}</p>
+                        <p>{selectedEvent.description}</p>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="secondary" onClick={handleClose}>Close</Button>
+                    </Modal.Footer>
+                </Modal>
+            )}
+
+            {/* Register Modal */}
+            <Modal show={showRegisterModal} onHide={handleRegisterClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Register for Event</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <Form onSubmit={handleFormSubmit}>
+                        <Form.Group controlId="formName">
+                            <Form.Label>Name</Form.Label>
+                            <Form.Control
+                                type="text"
+                                name="name"
+                                value={formData.name}
+                                onChange={handleInputChange}
+                                required
+                                placeholder="Enter your name"
+                            />
+                        </Form.Group>
+
+                        <Form.Group controlId="formEmail" className="mt-3">
+                            <Form.Label>Email address</Form.Label>
+                            <Form.Control
+                                type="email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleInputChange}
+                                required
+                                placeholder="Enter your email"
+                            />
+                        </Form.Group>
+
+
+
+                        <Button variant="primary" type="submit" className="mt-4">
+                            Submit
+                        </Button>
+                    </Form>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleRegisterClose}>Close</Button>
+                </Modal.Footer>
+            </Modal>
         </div>
     );
 }

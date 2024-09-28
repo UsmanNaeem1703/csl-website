@@ -11,6 +11,7 @@ import Leadership from "./components/Leadership/Leadership";
 import Exectives from "./components/Exectives/Exectives";
 import AboutUs from "./components/About Us/AboutUs";
 import Events from "./components/Events/Events";
+import Publishments from "./components/Publishments/Publishments"
 
 const AppContent = () => {
   const [loading, setLoading] = useState(false);
@@ -64,6 +65,7 @@ const AppContent = () => {
           <Route path="/exectives" element={<Exectives />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="*" element={<ComingSoon />} />
+          <Route path="/publishments" element={<Publishments/>}/>
         </Routes>
         <Footer />
       </div>

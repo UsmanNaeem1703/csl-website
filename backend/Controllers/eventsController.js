@@ -2,6 +2,8 @@ const jwt = require("jsonwebtoken");
 const Event = require("../Models/eventModel");
 const mongoose = require("mongoose");
 const escapeHtml = require("escape-html");
+const path = require("path");
+const fs = require("fs");
 
 const getEvents = async (req, res) => {
   try {
@@ -77,11 +79,12 @@ const updateEvent = async (req, res) => {
 const addEvent = async (req, res) => {
   try {
     // Extract data from the request body
-    const { name, description, time, venue, displayImage } = req.body;
+    const { name, oneLiner, description, time, venue, displayImage } = req.body;
 
     // Create a new event using the Event model
     const newEvent = new Event({
       name,
+      oneLiner,
       description,
       time,
       venue,
@@ -141,7 +144,126 @@ const dropEvent = async (req, res) => {
   }
 }
 
+const getEventBCC = async (req, res) => {
+  try {
+    const eventId = req.params.id;
+
+    // Check if the eventId is provided
+    if (!eventId) {
+      return res.status(400).json({
+        status: "fail",
+        message: "Event ID is required"
+      });
+    }
+
+    // Fetch registrations for the given event ID
+    const event = await Event.findById(eventId).select('+registrations');
+    const registrations = event?.registrations || [];
+
+    // Check if registrations exist
+    if (!registrations || registrations.length === 0) {
+      return res.status(404).json({
+        status: "fail",
+        message: "No registrations found for this event"
+      });
+    }
+
+    // Extract emails from the registrations
+    const emails = registrations.map(reg => reg.email).join(', ');
+
+    // Define the file directory and path
+    const dirPath = path.resolve(__dirname, '../public/bcc');
+    const filePath = path.join(dirPath, `event_${eventId}_bcc.txt`);
+
+    // Ensure the directory exists
+    if (!fs.existsSync(dirPath)) {
+      fs.mkdirSync(dirPath, { recursive: true });
+    }
+
+    // Write the emails to a text file
+    fs.writeFile(filePath, emails, (err) => {
+      if (err) {
+        console.error(err);
+        return res.status(500).json({
+          status: "fail",
+          message: "Error generating BCC file"
+        });
+      }
+
+      // Send the file to the client for download
+      res.download(filePath, `event_${eventId}_bcc.txt`, (err) => {
+        if (err) {
+          console.error(err);
+          return res.status(500).json({
+            status: "fail",
+            message: "Error downloading BCC file"
+          });
+        }
+
+        // Optional: Delete the file after download
+        fs.unlink(filePath, (err) => {
+          if (err) console.log("Error deleting the file after download:", err);
+        });
+      });
+    });
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({
+      status: "fail",
+      message: err.message
+    });
+  }
+};
+
+const registerForEvent = async (req, res) => {
+  try {
+    const eventId = req.params.id;
+    const { name, email } = req.body;
+
+    // Check if name and email are provided
+    if (!name || !email) {
+      return res.status(400).json({
+        status: "fail",
+        message: "Name and Email are required"
+      });
+    }
+
+    // Find the event by ID and push the new registration into the registrations array
+    const event = await Event.findByIdAndUpdate(
+      eventId,
+      {
+        $push: { registrations: { name, email } }
+      },
+      { new: true, runValidators: true }
+    );
+
+    // If event not found, return error
+    if (!event) {
+      return res.status(404).json({
+        status: "fail",
+        message: "Event not found"
+      });
+    }
+
+    // Send a success response with the updated event data
+    return res.status(200).json({
+      status: "success",
+      message: "Successfully registered for the event"
+    });
+
+  } catch (err) {
+    console.log(err);
+    return res.status(500).json({
+      status: "fail",
+      message: err.message
+    });
+  }
+}
+
+
 module.exports = {
+  getEventBCC,
+  registerForEvent,
   updateEvent,
   getEvents,
   addEvent,

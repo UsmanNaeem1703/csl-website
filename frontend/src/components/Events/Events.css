@@ -1,109 +1,117 @@
-/* Events Page Styling */
-.events-page {
-    background: linear-gradient(to bottom right, #37001f, #5c1291); /* Background gradient */
-    padding-bottom: 50px;
-}
-
-.events-page h1 {
-    font-size: 2.5rem;
-    color: #fff;
-    margin-bottom: 30px;
-    padding: 10px;
-    font-family: 'Arial', sans-serif;
-    text-align: center;
-}
-
-.events-page p {
-    font-size: 1.2rem;
-    color: #fff;
-    font-family: 'Arial', sans-serif;
-    padding:10px;
-    text-align: center;
-}
-
-.events-page .accordion p {
-    color: #333;
-}
-
-/* Accordion Item Styling */
-.accordion-item {
-    border: none;
-    margin-bottom: 10px;
-    
-}
-
-/* Event Content Layout */
-.event-content {
+/* Event Grid Styling */
+.events-grid {
     display: flex;
     flex-direction: column;
+    gap: 30px; /* Space between event cards */
+    margin-top: 20px;
+}
+
+/* Event Card Styling */
+.event-card {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    background-color: #ffffff;
+    border: 1px solid #000000; /* Add a solid black border */
+    border-radius: 15px; /* Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adjust the box shadow */
+    height: auto;
+    
+    padding: 20px; /* Add padding around the card */
     gap: 20px;
 }
 
-.countdown {
-    text-align: center;
-
-    font-size: 1.2rem;
-    color: #000000;
-    background-color: #ffffff;
-    border: 1px solid #610966;
-    border-radius:8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    
-    padding: 10px;
-    margin-bottom: 5px;
-    width:55%;
-    align-self: left;
+/* Image Styling */
+.event-card img {
+    width: 200px  ; /* Make the image smaller as per the reference */
+    height: auto;
+    border-radius: 10px; /* Rounded image corners */
+    object-fit: cover; /* Maintain image aspect ratio */
 }
 
+/* Event Details Section */
 .event-details {
     display: flex;
-   justify-content: space-between; 
-    align-items: flex-start;
-    gap:20px;
-    
-    
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
 }
 
-/* Venue & Description */
-.venue-description {
-    
-    flex: 1.2;
-    padding: 10px;
-    background-color: #ffffff;
-    border: 1px solid #610966;
-    border-radius:8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);   
-    width:54.5%;
+/* Card Title Styling */
+.event-card .card-body h5 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: #000000;
 }
 
-/* Event Image */
-.event-image {
-    flex: 1;
-    padding: 0px;
-    text-align: center;
+/* Card Text Styling */
+.event-card .card-body p {
+    font-size: 0.9rem;
+    color: #333333;
 }
 
-.event-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
+/* Button Section */
+.event-buttons {
+    display: flex;
+    gap: 10px; /* Space between buttons */
 }
 
-/* Accordion Header Styling */
-.accordion-header {
-    font-weight: bold;
-    background-color: #000000;
-    color: white;
-    padding: 10px;
-}
-
-.accordion-body {
-    padding: 8px;
-    text-align: center;
-    background-color: #ffffff;
-}
-
-.accordion-header:hover {
+/* Register Button Styling */
+.register-btn {
     background-color: #600540;
+    color: #ffffff;
+    border: none;
+    padding: 8px 15px;
+    font-size: 1rem;
+}
+.events-btn{
+    background-color: #600540;
+    color: #ffffff;
+    border: none;
+    padding: 8px 15px;
+    font-size: 1rem; 
+}
+.events-btn:hover{
+    color:#ffffff;
+    background-color: #333333;
 }
 
+/* Learn More Button Styling */
+.learn-more-btn {
+    background-color: #600540;
+    color: #ffffff;
+    border: none;
+    padding: 8px 15px;
+    font-size: 1rem;
+    
+}
+
+/* Hover Effects */
+.event-card .btn:hover {
+    opacity: 0.8;
+}
+.modal-body form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-body form .form-group {
+    margin-bottom: 15px;
+}
+
+.modal-body form .form-control {
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.modal-footer .btn {
+    background-color: #600540;
+    border: none;
+}
+
+.modal-footer .btn:hover {
+    background-color: #44012b;
+}
+.event-card-body{
+    padding: 0;
+}

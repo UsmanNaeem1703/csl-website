@@ -42,7 +42,7 @@ const Header = (props) => {
           <Navbar.Collapse id="lower-navbar-nav" className="menu-right">
             <Nav className="mx-auto">
               <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/newsletter">Newsletter</Nav.Link>
+              <Nav.Link href="/publishments">Publishments</Nav.Link>
               <NavDropdown title="Our Team" id="basic-nav-dropdown">
                 <NavDropdown.Item href="/mentors">Mentors</NavDropdown.Item>
                 <NavDropdown.Item href="/leadership">Leaders</NavDropdown.Item>

@@ -1,0 +1,111 @@
+/* General styling */
+.publishments-page {
+    padding: 20px;
+    background-color: #f7f7f7;
+}
+
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.publish-btn {
+    background-color: #600540;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+}
+
+.publish-btn:hover {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+/* Sidebar styling */
+.sidebar {
+    width: 25%;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.search-form {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    margin-right: 10px;
+}
+
+.search-btn {
+    background-color: #600540;
+    color: #ffffff;
+    border: none;
+}
+
+.blog-list {
+    margin-top: 20px;
+}
+
+.blog-list h5 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.blog-list-item {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    ;
+    background-color: #f0f0f0;
+}
+
+/* Blog display section */
+.content-section {
+    display: flex;
+    gap: 20px;
+}
+
+.blog-display {
+    width: 75%;
+}
+
+.blog-card {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+}
+
+.blog-card .card-body {
+    padding: 10px;
+}
+
+/* Modal styling */
+.modal-body form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-body form .form-group {
+    margin-bottom: 15px;
+}
+
+.modal-body form .form-control {
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.modal-footer .btn {
+    background-color: #600540;
+    border: none;
+}
+
+.modal-footer .btn:hover {
+    background-color: #44012b;
+}
