@@ -43,12 +43,13 @@ const Header = (props) => {
             <Nav className="mx-auto">
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/publishments">Publishments</Nav.Link>
+              <Nav.Link href="/events">Events</Nav.Link>
               <NavDropdown title="Our Team" id="basic-nav-dropdown">
                 <NavDropdown.Item href="/mentors">Mentors</NavDropdown.Item>
                 <NavDropdown.Item href="/leadership">Leaders</NavDropdown.Item>
                 <NavDropdown.Item href="/exectives">Exectives</NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link href="/playbooks">Playbooks</Nav.Link>
+              {/* <Nav.Link href="/playbooks">Playbooks</Nav.Link> */}
               <Nav.Link href="/about">About Us</Nav.Link>
               <Nav.Link href="/contact">Contact Us</Nav.Link>
             </Nav>
